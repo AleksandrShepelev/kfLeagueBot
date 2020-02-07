@@ -1,0 +1,31 @@
+module.exports = {
+    STATE_NO_SESSION: "no_session",
+    STATE_IN_SESSION: "in_session",
+    STATE_WILL_JOIN: "will_join",
+    STATE_BAD_STATE: "bad_state",
+
+    COMMAND_START: "/start",
+    COMMAND_CREATE_SESSION: "НАЧАТЬ ИГРУ",
+    COMMAND_JOIN_SESSION: "ПРИСОЕДИНИТЬСЯ К ИГРЕ",
+    COMMAND_RESET_SESSION: "СБРОСИТЬ ТЕКУЩУЮ ИГРУ",
+
+    MESSAGE_HELLO: "Привет. Я бот триад лиги Keyforge. Я помогу тебе банить деки одновременно с оппонентом",
+    MESSAGE_SESSION_ID: "ID игры:",
+    MESSAGE_ENTER_ID: "Введите ID игры",
+    MESSAGE_RESET_SESSION: "Игра сброшена",
+    MESSAGE_YOU_JOINED: "Вы присоединились к игре",
+    MESSAGE_RESPONSE_SAVED: "Ваш ответ сохранён",
+    MESSAGE_BAD_STATE: "Всё очень плохо",
+    MESSAGE_PLAYER_1_SAID: "Игрок 1 сказал:",
+    MESSAGE_PLAYER_2_SAID: "Игрок 2 сказал:",
+    MESSAGE_WRITE_BAN: "Напишите, какую колоду вы баните",
+
+    ERROR_USER_NOT_EXISTS: "Пользователь не существует. Создайте пользователя заново с помощью команды /start",
+    ERROR_ALREADY_HAS_SESSION: "У пользователя уже есть текущая игра",
+    ERROR_USER_HAS_NO_SESSION: "У пользователя нет игры",
+    ERROR_PLAYERS_DID_NOT_SEND: "Кто-то из игроков еще не отправил сообщение",
+    ERROR_NO_SESSION: "Нет игры с таким ID",
+    ERROR_TWO_ALREADY_JOINED : "2 игрока уже присоединились к игре",
+    ERROR_USER_NOT_IN_SESSION: "Этот пользователь не присоединялся к этой игре",
+    ERROR_MESSAGE_ALREADY_SAVED: "Сообщение уже было сохранено",
+};
