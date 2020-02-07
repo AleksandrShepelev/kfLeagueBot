@@ -75,7 +75,7 @@ bot.on('message', (msg) => {
 
                             for (const playerId of [result.player_1_id, result.player_2_id]) {
                                 const player = users.get(playerId);
-                                bot.sendMessage(player.chatId, result.message, {reply_markup: getReplyKeyboard(constants.STATE_NO_SESSION)});
+                                bot.sendMessage(player.chatId, result.message, {reply_markup: getReplyKeyboard(player.state)});
                             }
                         } else {
                             bot.sendMessage(chatId, constants.MESSAGE_RESPONSE_SAVED, {reply_markup: getReplyKeyboard(constants.STATE_IN_SESSION)})
