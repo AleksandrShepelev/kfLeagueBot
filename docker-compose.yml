@@ -9,4 +9,6 @@ services:
       context: ./src
     command: npm run bot:dev
     restart: always
+    volumes:
+      - ./:/code
     network_mode: "host"
