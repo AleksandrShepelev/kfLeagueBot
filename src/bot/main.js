@@ -1,10 +1,15 @@
 const TelegramBot = require('node-telegram-bot-api');
-const users = require('./user-repo');
-const constants = require('./constants');
+const users = require('../repo/user-repo');
+const constants = require('../config/constants');
+const config = require('../config');
 // replace the value below with the Telegram token you receive from @BotFather
-const token = "1044282259:AAGONXcJI4EX7wthv7Uuiea9eF1qiUu7VJI";
+const token = config.service.tgToken;
+const logger = require('../config/logger');
+const MongoConnector = require('../db/mongo');
+
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
+new MongoConnector(config, logger).connectToMongo();
 
 
 const getReplyKeyboard = (nextState) => {
@@ -34,47 +39,47 @@ const getReplyKeyboard = (nextState) => {
 };
 // Listen for any kind of message. There are different kinds of
 // messages.
-bot.on('message', (msg) => {
+bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
     const userId = msg.from.id;
     try {
         switch (msg.text) {
             case constants.COMMAND_START:
                 try {
-                    users.get(userId);
-                    users.resetSession(userId);
+                    await users.get(userId);
+                    await users.resetSession(userId);
                 } catch (err) {
-                    users.create(userId, chatId);
+                    await users.create(userId, chatId);
                 }
                 bot.sendMessage(chatId, constants.MESSAGE_HELLO, {reply_markup: getReplyKeyboard(constants.STATE_NO_SESSION)});
                 break;
             case constants.COMMAND_CREATE_SESSION:
-                const sessionId = users.createSession(userId);
+                const sessionId = await users.createSession(userId);
                 bot.sendMessage(chatId, `${constants.MESSAGE_SESSION_ID} ${sessionId}. ${constants.MESSAGE_WRITE_BAN}`, {reply_markup: getReplyKeyboard(constants.STATE_IN_SESSION)});
                 break;
             case constants.COMMAND_JOIN_SESSION:
-                users.willJoinSession(userId);
+                await users.willJoinSession(userId);
                 bot.sendMessage(chatId, constants.MESSAGE_ENTER_ID, {reply_markup: getReplyKeyboard(constants.STATE_WILL_JOIN)});
                 break;
             case constants.COMMAND_RESET_SESSION:
-                users.resetSession(userId);
+                await users.resetSession(userId);
                 bot.sendMessage(chatId, constants.MESSAGE_RESET_SESSION, {reply_markup: getReplyKeyboard(constants.STATE_NO_SESSION)});
                 break;
             default:
-                const user = users.get(userId);
+                const user = await users.get(userId);
                 console.log(user);
                 switch (user.state) {
                     case constants.STATE_WILL_JOIN:
-                        users.joinSession(userId, msg.text);
+                        await users.joinSession(userId, msg.text);
                         bot.sendMessage(chatId, `${constants.MESSAGE_YOU_JOINED}. ${constants.MESSAGE_WRITE_BAN}`, {reply_markup: getReplyKeyboard(constants.STATE_IN_SESSION)});
                         break;
                     case constants.STATE_IN_SESSION:
-                        const result = users.addMessageToSession(userId, msg.text);
+                        const result = await users.addMessageToSession(userId, msg.text);
                         if (result) {
-                            users.resetSession(userId);
+                            await users.resetSession(userId);
 
                             for (const playerId of [result.player_1_id, result.player_2_id]) {
-                                const player = users.get(playerId);
+                                const player = await users.get(playerId);
                                 bot.sendMessage(player.chatId, result.message, {reply_markup: getReplyKeyboard(player.state)});
                             }
                         } else {

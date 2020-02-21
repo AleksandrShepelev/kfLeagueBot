@@ -1,40 +1,47 @@
-const utils = require("./utils");
-const constants = require("./constants");
-const sessionsDb = new Map();
+const utils = require("../utils");
+const constants = require("../config/constants");
+const Session = require('../db/session');
 
-const create = (userId) => {
+const create = async (userId) => {
     const id = utils.generateRandomId();
-    //check uniquiness
-
-    sessionsDb.set(id, {
-        player1: {
-            id: userId,
-            message: null,
-        },
-        player2: {
-            id: null,
-            message: null,
+    //TODO: check uniquiness
+    await Session.create(
+        {
+            id,
+            player1: {
+                id: userId,
+                message: null,
+            },
+            player2: {
+                id: null,
+                message: null,
+            }
         }
-    });
+    );
+
     return id;
 };
 
-const join = (sessionId, userId) => {
-    const session = sessionsDb.get(sessionId);
+const get = async (sessionId) => {
+    const session = await Session.findOne({id: sessionId});
     if (!session) {
         throw new Error(constants.ERROR_NO_SESSION)
     }
+    return session;
+};
+
+const join = async (sessionId, userId) => {
+    const session = await get(sessionId);
     if (session.player2.id) {
         throw new Error(constants.ERROR_TWO_ALREADY_JOINED)
     }
     session.player2.id = userId;
+
+    await session.save();
 };
 
-const addMessage = (sessionId, userId, msg) => {
-    const session = sessionsDb.get(sessionId);
-    if (!session) {
-        throw new Error(constants.ERROR_NO_SESSION)
-    }
+const addMessage = async (sessionId, userId, msg) => {
+    const session = await get(sessionId);
     let player = null;
     if (session.player1.id === userId) {
         player = session.player1;
@@ -51,21 +58,13 @@ const addMessage = (sessionId, userId, msg) => {
     }
 
     player.message = msg;
+
+    await session.save();
 };
 
-const get = (sessionId) => {
-    const session = sessionsDb.get(sessionId);
-    if (!session) {
-        throw new Error(constants.ERROR_NO_SESSION)
-    }
-    return session;
-};
 
-const getMessages = (sessionId) => {
-    const session = sessionsDb.get(sessionId);
-    if (!session) {
-        throw new Error(constants.ERROR_NO_SESSION)
-    }
+const getMessages = async (sessionId) => {
+    const session = await get(sessionId);
     if (!session.player1.message || !session.player2.message) {
         throw new Error(constants.ERROR_PLAYERS_DID_NOT_SEND)
     }
