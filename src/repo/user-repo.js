@@ -9,11 +9,12 @@ no_session->will_join->in_session->no_session
  */
 
 
-const create = async (tgUserId, chatId) => {
+const create = async (tgUserId, chatId, username) => {
     await User.create(
         {
             id: tgUserId,
             chatId: chatId,
+            username:username,
             currentSession: null,
             state: constants.STATE_NO_SESSION,
         }
@@ -76,15 +77,24 @@ const addMessageToSession = async (tgUserId, msg) => {
         throw new Error(constants.ERROR_USER_HAS_NO_SESSION);
     }
     await sessions.addMessage(user.currentSession, tgUserId, msg);
-
     try {
-        return sessions.getMessages(user.currentSession);
+        return await sessions.getMessages(user.currentSession);
     } catch (err) {
         if (err.message === constants.ERROR_PLAYERS_DID_NOT_SEND) {
             return null;
         }
         throw err;
     }
+
+};
+
+const isAdmin = async (tgUserId) => {
+  const user = await get(tgUserId);
+  return user.username === "a_s_shepelev";
+};
+
+const getList = async () => {
+  return await User.find({}).select("username");
 };
 
 module.exports = {
@@ -94,5 +104,7 @@ module.exports = {
     createSession,
     joinSession,
     resetSession,
-    willJoinSession
+    willJoinSession,
+    isAdmin,
+    getList
 };

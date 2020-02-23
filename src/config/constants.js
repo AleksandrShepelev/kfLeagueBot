@@ -1,13 +1,19 @@
 module.exports = {
+    STATE_NOT_STARTED: "not_started",
     STATE_NO_SESSION: "no_session",
     STATE_IN_SESSION: "in_session",
     STATE_WILL_JOIN: "will_join",
     STATE_BAD_STATE: "bad_state",
+    STATE_ADMIN_MAIN: "admin_main",
+    STATE_ADD_DECKS: "add_decks",
 
     COMMAND_START: "/start",
     COMMAND_CREATE_SESSION: "НАЧАТЬ ИГРУ",
     COMMAND_JOIN_SESSION: "ПРИСОЕДИНИТЬСЯ К ИГРЕ",
     COMMAND_RESET_SESSION: "СБРОСИТЬ ТЕКУЩУЮ ИГРУ",
+    COMMAND_SHOW_ADMIN: "ПОКАЗАТЬ АДМИН ПАНЕЛЬ",
+    COMMAND_ADD_DECKS: "ДОБАВИТЬ КОЛОДЫ",
+    COMMAND_SHOW_DECKS: "ПОКАЗАТЬ КОЛОДЫ",
 
     MESSAGE_HELLO: "Привет. Я бот триад лиги Keyforge. Я помогу тебе банить деки одновременно с оппонентом",
     MESSAGE_SESSION_ID: "ID игры:",
@@ -19,6 +25,8 @@ module.exports = {
     MESSAGE_PLAYER_1_SAID: "Игрок 1 сказал:",
     MESSAGE_PLAYER_2_SAID: "Игрок 2 сказал:",
     MESSAGE_WRITE_BAN: "Напишите, какую колоду вы баните",
+    MESSAGE_PICK: "Выберите действие",
+    MESSAGE_WRITE_DECK_NAME: "Напишите название колоды",
 
     ERROR_USER_NOT_EXISTS: "Пользователь не существует. Создайте пользователя заново с помощью команды /start",
     ERROR_ALREADY_HAS_SESSION: "У пользователя уже есть текущая игра",

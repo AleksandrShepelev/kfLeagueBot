@@ -26,4 +26,4 @@ SessionSchema.pre('save', function (next) {
   next();
 });
 
-module.exports = mongoose.model('Notification', SessionSchema);
+module.exports = mongoose.model('Session', SessionSchema);

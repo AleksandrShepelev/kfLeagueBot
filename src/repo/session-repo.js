@@ -43,10 +43,10 @@ const join = async (sessionId, userId) => {
 const addMessage = async (sessionId, userId, msg) => {
     const session = await get(sessionId);
     let player = null;
-    if (session.player1.id === userId) {
+    if (session.player1.id == userId) {
         player = session.player1;
     }
-    if (session.player2.id === userId) {
+    if (session.player2.id == userId) {
         player = session.player2;
     }
     if (!player) {

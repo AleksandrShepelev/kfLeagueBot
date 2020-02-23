@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bot:dev": "node src/bot/main.js"
+    "bot:dev": "nodemon --watch src src/bot/main.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "javascript-state-machine": "^3.1.0",
+    "mongoose": "^5.6.2",
     "node-telegram-bot-api": "^0.40.0",
-    "mongoose": "^5.6.2"
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
   }
 }
