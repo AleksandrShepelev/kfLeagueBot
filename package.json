@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bot:dev": "nodemon --watch src src/bot/main.js"
+    "bot:dev": "nodemon --watch src src/bot/main.js",
+    "bot": "node src/bot/main.js"
   },
   "keywords": [],
   "author": "",

@@ -20,7 +20,7 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: ./src/bot
-    command: npm run bot:dev
+    command: npm run bot
     restart: always
     volumes:
       - ./:/code
