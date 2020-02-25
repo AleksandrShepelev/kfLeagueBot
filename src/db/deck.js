@@ -2,9 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const DeckSchema = new Schema({
-  userId: {type: String, required: true},
-  name: {type: String, required: true},
-  img: {type: String, required: true},
+  userId: {type: String},
+  username: {type: String, required: true, index: true},
+  name: {type: String, required: true, unique: true, index: true},
+  url: {type: String, required: true},
+  img: {type: String},
 }, {timestamps: {createdAt: 'createdAt', updatedAt: 'updatedAt'}, background: false});
 
 /*

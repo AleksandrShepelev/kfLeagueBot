@@ -1,6 +1,7 @@
 const utils = require("../utils");
 const constants = require("../config/constants");
 const Session = require('../db/session');
+const decks = require('./deck-repo');
 
 const create = async (userId) => {
     const id = utils.generateRandomId();
@@ -10,12 +11,15 @@ const create = async (userId) => {
             id,
             player1: {
                 id: userId,
-                message: null,
+                ban: null,
+                decks: [],
             },
             player2: {
                 id: null,
-                message: null,
-            }
+                ban: null,
+                decks: [],
+            },
+            state: "pick"
         }
     );
 
@@ -40,8 +44,16 @@ const join = async (sessionId, userId) => {
     await session.save();
 };
 
-const addMessage = async (sessionId, userId, msg) => {
+const addDeck = async (sessionId, userId, deckName) => {
     const session = await get(sessionId);
+    const deck = await decks.getByName(deckName);
+    const player = getPlayer(session, userId);
+    player.decks.push({name: deck.name, url: deck.url});
+    await session.save();
+    return player.decks;
+};
+
+const getPlayer = (session, userId) => {
     let player = null;
     if (session.player1.id == userId) {
         player = session.player1;
@@ -53,26 +65,51 @@ const addMessage = async (sessionId, userId, msg) => {
         throw new Error(constants.ERROR_USER_NOT_IN_SESSION);
     }
 
-    if (player.message) {
+    return player;
+};
+
+const getPlayerData = async(sessionId, userId) => {
+    const session = await get(sessionId);
+    return getPlayer(session, userId);
+};
+
+const addMessage = async (sessionId, userId, msg) => {
+    const session = await get(sessionId);
+    const player = getPlayer(session, userId);
+
+    if (player.ban) {
         throw new Error(constants.ERROR_MESSAGE_ALREADY_SAVED);
     }
 
-    player.message = msg;
+    player.ban = msg;
 
     await session.save();
+};
+
+const getPlayersDecks = async (sessionId) => {
+    const session = await get(sessionId);
+    if (session.player1.decks.length < 3 || session.player2.decks.length < 3) {
+        throw new Error(constants.ERROR_PLAYERS_DID_NOT_CHOOSE_DECKS)
+    }
+    session.state = "ban";
+    await session.save();
+    return {
+        player1: session.player1,
+        player2: session.player2,
+    }
 };
 
 
 const getMessages = async (sessionId) => {
     const session = await get(sessionId);
-    if (!session.player1.message || !session.player2.message) {
+    if (!session.player1.ban || !session.player2.ban) {
         throw new Error(constants.ERROR_PLAYERS_DID_NOT_SEND)
     }
 
     return {
         "player_1_id": session.player1.id,
         "player_2_id": session.player2.id,
-        "message": `${constants.MESSAGE_SESSION_ID} ${sessionId}; ${constants.MESSAGE_PLAYER_1_SAID} ${session.player1.message}; ${constants.MESSAGE_PLAYER_2_SAID} ${session.player2.message}`
+        "message": `${constants.MESSAGE_SESSION_ID} ${sessionId}; ${constants.MESSAGE_PLAYER_1_SAID} ${session.player1.ban}; ${constants.MESSAGE_PLAYER_2_SAID} ${session.player2.ban}`
     }
 };
 
@@ -82,4 +119,7 @@ module.exports = {
     join,
     get,
     addMessage,
+    addDeck,
+    getPlayersDecks,
+    getPlayerData
 };

@@ -14,7 +14,7 @@ const create = async (tgUserId, chatId, username) => {
         {
             id: tgUserId,
             chatId: chatId,
-            username:username,
+            username: username,
             currentSession: null,
             state: constants.STATE_NO_SESSION,
         }
@@ -23,11 +23,27 @@ const create = async (tgUserId, chatId, username) => {
 };
 
 const get = async (tgUserId) => {
-    const user = await User.findOne({id:tgUserId});
+    const user = await User.findOne({id: tgUserId});
     if (!user) {
         throw new Error(constants.ERROR_USER_NOT_EXISTS);
     }
     return user;
+};
+
+const getSession = async (tgUserId) => {
+    const user = await get(tgUserId);
+    if (!user.currentSession) {
+        throw new Error(constants.ERROR_USER_HAS_NO_SESSION);
+    }
+    return await sessions.get(user.currentSession);
+};
+
+const getSessionPlayerData = async (tgUserId) => {
+    const user = await get(tgUserId);
+    if (!user.currentSession) {
+        throw new Error(constants.ERROR_USER_HAS_NO_SESSION);
+    }
+    return await sessions.getPlayerData(user.currentSession, tgUserId);
 };
 
 const createSession = async (tgUserId) => {
@@ -88,23 +104,44 @@ const addMessageToSession = async (tgUserId, msg) => {
 
 };
 
+const addDeckToSession = async (tgUserId, deck) => {
+    const user = await get(tgUserId);
+    if (!user.currentSession) {
+        throw new Error(constants.ERROR_USER_HAS_NO_SESSION);
+    }
+    const decks = await sessions.addDeck(user.currentSession, tgUserId, deck);
+    try {
+        return await sessions.getPlayersDecks(user.currentSession);
+    } catch (err) {
+        if (err.message === constants.ERROR_PLAYERS_DID_NOT_CHOOSE_DECKS) {
+            return null;
+        }
+        throw err;
+    }
+
+};
+
+
 const isAdmin = async (tgUserId) => {
-  const user = await get(tgUserId);
-  return user.username === "a_s_shepelev";
+    const user = await get(tgUserId);
+    return user.username === "a_s_shepelev";
 };
 
 const getList = async () => {
-  return await User.find({}).select("username");
+    return await User.find({}).select("username");
 };
 
 module.exports = {
     create,
     get,
     addMessageToSession,
+    addDeckToSession,
     createSession,
     joinSession,
     resetSession,
     willJoinSession,
     isAdmin,
-    getList
+    getList,
+    getSession,
+    getSessionPlayerData
 };
