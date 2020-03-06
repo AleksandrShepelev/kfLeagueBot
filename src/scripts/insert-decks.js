@@ -34,7 +34,21 @@ const main = async () => {
             name: "Master “Spitfire” Viola",
             url: "https://decksofkeyforge.com/decks/e31f5d3f-0ced-4757-b621-8d4e9dca37ad",
         },
-
+        {
+            username: "a_s_shepelev",
+            name: "Lima of Freehaven",
+            url: "https://decksofkeyforge.com/decks/0f832e03-d239-4ce2-8aeb-663d62407b75",
+        },
+        {
+            username: "a_s_shepelev",
+            name: "Flashgrin, the “Earth Keeper” of Forgery",
+            url: "https://decksofkeyforge.com/decks/5616c267-a251-4e17-aaab-ceb6fbd6ab81",
+        },
+        {
+            username: "a_s_shepelev",
+            name: "Obligrate, the “Padre” of Invention",
+            url: "https://decksofkeyforge.com/decks/9cdd44a3-3a85-45a6-99f3-ba7bb33b5b20",
+        },
         {
             username: "AzamatValeev",
             name: "Aurora, Wintermanse Adventurer",
@@ -54,6 +68,17 @@ const main = async () => {
             username: "AzamatValeev",
             name: "Менестрель Гоголь",
             url: "https://decksofkeyforge.com/decks/21b4240d-2047-43f0-baf1-c3a578fffe38",
+        },
+        {
+            username: "AzamatValeev",
+            name: "Disinticanic, the Infiltrator Rogue",
+            url: "https://decksofkeyforge.com/decks/334bdfd6-7018-4cc0-b3ed-76b138580df1",
+        },
+
+        {
+            username: "AzamatValeev",
+            name: "Mx. Troptoblade, the Feckless Alchemist",
+            url: "https://decksofkeyforge.com/decks/358e3949-c0c8-4b30-aabb-05f5af6f62b9",
         },
         {
             username: "Elademri",
