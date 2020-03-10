@@ -236,25 +236,25 @@ const main = async () => {
             url: "https://decksofkeyforge.com/decks/e2e24cab-28b0-4080-9203-35d53fb71d2e",
         },
         {
-            username: "chudesa_botaniki",
+            username: "CocteauTwins",
             name: "Валет из гиблых топей",
             url: "https://decksofkeyforge.com/decks/eaedf297-abb3-471f-9380-9436008f651f",
         }, {
-            username: "chudesa_botaniki",
+            username: "CocteauTwins",
             name: "Eccentric Beelzebub of the Orpheum",
             url: "https://decksofkeyforge.com/decks/882be792-f3c7-4f83-a08e-756dc97a4559",
         },
         {
-            username: "chudesa_botaniki",
+            username: "CocteauTwins",
             name: "Luxa of Hydrobis Bay",
             url: "https://decksofkeyforge.com/decks/31f82615-bb62-408b-a18c-0b50ff38085b",
         },
         {
-            username: "chudesa_botaniki",
+            username: "CocteauTwins",
             name: "Empress Octocan, the Spiky Worm",
             url: "https://decksofkeyforge.com/decks/e1a78df4-fb11-4ce6-a46f-3a25c1aeb54e",
         }, {
-            username: "chudesa_botaniki",
+            username: "CocteauTwins",
             name: "Сутулая Бриджит Хаус",
             url: "https://decksofkeyforge.com/decks/65877b1c-fa18-454b-b0db-d59ca7509faf",
         },
