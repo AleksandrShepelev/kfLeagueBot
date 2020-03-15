@@ -136,6 +136,16 @@ const main = async () => {
             url: "https://decksofkeyforge.com/decks/b62f1ec2-ba83-4c63-85ab-006cd54eb0f0",
         },
         {
+            username: "SlimSlamSnaga",
+            name: "Drekring, the Gangleader of Innocence",
+            url: "https://decksofkeyforge.com/decks/ee650fbb-d76c-4aa9-89e1-17ba5cca2936",
+        },
+        {
+            username: "SlimSlamSnaga",
+            name: "Клирик Аберкромби",
+            url: "https://decksofkeyforge.com/decks/b10d40f7-370e-4878-9306-216a073c7b0e",
+        },
+        {
             username: "dr_gluck",
             name: "Murkveil, the Minister Rogue",
             url: "https://decksofkeyforge.com/decks/2aeacefb-0873-4c5d-bfad-8983eb74f494",
