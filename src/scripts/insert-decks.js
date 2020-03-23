@@ -142,6 +142,11 @@ const main = async () => {
         },
         {
             username: "SlimSlamSnaga",
+            name: "Gladiator Kyrre Kenboss",
+            url: "https://decksofkeyforge.com/decks/3b16ecdd-4a6e-4f94-a761-4588a71de1c2",
+        },
+        {
+            username: "SlimSlamSnaga",
             name: "Клирик Аберкромби",
             url: "https://decksofkeyforge.com/decks/b10d40f7-370e-4878-9306-216a073c7b0e",
         },
