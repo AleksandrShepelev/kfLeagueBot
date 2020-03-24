@@ -74,11 +74,15 @@ const main = async () => {
             name: "Disinticanic, the Infiltrator Rogue",
             url: "https://decksofkeyforge.com/decks/334bdfd6-7018-4cc0-b3ed-76b138580df1",
         },
-
         {
             username: "AzamatValeev",
             name: "Mx. Troptoblade, the Feckless Alchemist",
             url: "https://decksofkeyforge.com/decks/358e3949-c0c8-4b30-aabb-05f5af6f62b9",
+        },
+        {
+            username: "AzamatValeev",
+            name: "Ximan “Champion Dexter” Einstein",
+            url: "https://decksofkeyforge.com/decks/f15de3a5-cf00-4400-b785-b25aed9f098b",
         },
         {
             username: "Elademri",
