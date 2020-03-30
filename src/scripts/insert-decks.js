@@ -50,6 +50,11 @@ const main = async () => {
             url: "https://decksofkeyforge.com/decks/9cdd44a3-3a85-45a6-99f3-ba7bb33b5b20",
         },
         {
+            username: "a_s_shepelev",
+            name: "Master “Spud” Maurya",
+            url: "https://decksofkeyforge.com/decks/95b7bb29-c5d4-4504-9c5f-3851f78e63b6",
+        },
+        {
             username: "AzamatValeev",
             name: "Aurora, Wintermanse Adventurer",
             url: "https://decksofkeyforge.com/decks/17e2f5a2-836a-452c-b688-800b4c4fa23c",
@@ -153,6 +158,16 @@ const main = async () => {
             username: "SlimSlamSnaga",
             name: "Клирик Аберкромби",
             url: "https://decksofkeyforge.com/decks/b10d40f7-370e-4878-9306-216a073c7b0e",
+        },
+        {
+            username: "SlimSlamSnaga",
+            name: "Payton Bottomink from the Critic’s Cabin",
+            url: "https://decksofkeyforge.com/decks/dac7a436-9dec-4427-a643-6cc31854edb7",
+        },
+        {
+            username: "SlimSlamSnaga",
+            name: "The Sentinel that Remembers Hope",
+            url: "https://decksofkeyforge.com/decks/df513a86-2ccf-40b8-9202-cb62abdee7e7",
         },
         {
             username: "dr_gluck",
