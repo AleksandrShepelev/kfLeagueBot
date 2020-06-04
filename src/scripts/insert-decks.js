@@ -66,8 +66,8 @@ const main = async () => {
         },
         {
             username: "a_s_shepelev",
-            name: "Father Y. Torvaral",
-            url: "https://decksofkeyforge.com/decks/7b1cd39f-6937-4933-ba07-f8cd4530d9ea",
+            name: "Hijacker Adils Carmencloth",
+            url: "https://decksofkeyforge.com/decks/6a7311f5-edcd-49fe-a07d-a3335faef442",
         },
         {
             username: "a_s_shepelev",
@@ -81,19 +81,19 @@ const main = async () => {
         },
         {
             username: "a_s_shepelev",
-            name: "Ming the Privately Opinionated",
-            url: "https://decksofkeyforge.com/decks/79c1c24b-ca34-4073-80f5-43cfc31525b8",
+            name: "Argonielia Murphey-Bird, Baker",
+            url: "https://decksofkeyforge.com/decks/7ec07aff-8a0d-40fc-96f1-7b8025c8f59b",
         },
 
         {
             username: "AzamatValeev",
-            name: "Downoid, the Dragon of The Empire",
-            url: "https://decksofkeyforge.com/decks/9d2b6d9f-fd31-4e7a-ac39-507676c8e8d0",
+            name: "Aurora, Wintermanse Adventurer",
+            url: "https://decksofkeyforge.com/decks/17e2f5a2-836a-452c-b688-800b4c4fa23c",
         },
         {
             username: "AzamatValeev",
-            name: "Frostattack, Repository Desperado",
-            url: "https://decksofkeyforge.com/decks/3601f002-03b7-4675-a7f2-cf943534b5c1",
+            name: "He that Scribbles of Æmberology",
+            url: "https://decksofkeyforge.com/decks/d62becf7-efcc-4b3f-8c88-45b389c8471d",
         },
         {
             username: "AzamatValeev",
@@ -176,12 +176,12 @@ const main = async () => {
         },
         {
             username: "superalek",
-            name: "Д. Сноу, Кровавый бандит",
-            url: "https://decksofkeyforge.com/decks/a28cbb4f-8d5c-472e-93d5-d098d9713311",
+            name: "“Ermite”, Tourmenteur de Sudring",
+            url: "https://decksofkeyforge.com/decks/704f6b54-e973-4c76-9435-349e6aceacf6",
         }, {
             username: "superalek",
-            name: "Harmony “Sgt. Crusher” Kingston",
-            url: "https://decksofkeyforge.com/decks/7580aa31-da0c-46ea-a29d-d997866d7cb8",
+            name: "Dagger Rossi",
+            url: "https://decksofkeyforge.com/decks/ce16657e-4723-4992-a267-e2bf1033acd0",
         },
         {
             username: "CocteauTwins",
