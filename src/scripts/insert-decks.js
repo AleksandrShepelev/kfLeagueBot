@@ -71,18 +71,18 @@ const main = async () => {
         },
         {
             username: "a_s_shepelev",
-            name: "https://decksofkeyforge.com/decks/b420df26-79a4-4516-b810-e8f9b77e5511",
-            url: "Stargazer, Causespring's Bailiff",
+            url: "https://decksofkeyforge.com/decks/b420df26-79a4-4516-b810-e8f9b77e5511",
+            name: "Stargazer, Causespring's Bailiff",
         },
         {
             username: "a_s_shepelev",
-            name: "https://decksofkeyforge.com/decks/778669fd-06d7-4088-9eed-7a97461b431c",
-            url: "I. Overson, Tilliness’s Aimless Midwife",
+            url: "https://decksofkeyforge.com/decks/778669fd-06d7-4088-9eed-7a97461b431c",
+            name: "I. Overson, Tilliness’s Aimless Midwife",
         },
         {
             username: "a_s_shepelev",
-            name: "https://decksofkeyforge.com/decks/ad98be2f-009f-4f54-ac88-aaf4b8065bf2",
-            url: "“Rubacuori”, Delegato di Sonnobrullo",
+            url: "https://decksofkeyforge.com/decks/ad98be2f-009f-4f54-ac88-aaf4b8065bf2",
+            name: "“Rubacuori”, Delegato di Sonnobrullo",
         },
 
         {
