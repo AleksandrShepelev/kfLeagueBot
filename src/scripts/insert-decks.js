@@ -11,8 +11,8 @@ const main = async () => {
     await Deck.insertMany([
         {
             username: "dr_gluck",
-            name: "The Ayya of Runstock",
-            url: "https://decksofkeyforge.com/decks/5645da99-1bab-4763-b13e-1d5915ecfb98",
+            name: "Plautius, the Abductor of Radiation",
+            url: "https://decksofkeyforge.com/decks/657de1a4-0dd3-4a48-8e78-fc76016c8281",
         }, {
             username: "dr_gluck",
             name: "Следопыт Моралес",
@@ -50,19 +50,18 @@ const main = async () => {
         },
         {
             username: "TwoCorbies",
-            name: "“Cosmos” Fidus, Ivory Tower Elder",
-            url: "https://decksofkeyforge.com/decks/57850abd-dd70-4811-b22a-792a5099c18a",
+            name: "Синьора Гиббонс",
+            url: "https://decksofkeyforge.com/decks/c86e4955-aa1c-4f75-85b2-d9399ac10cab",
         },
         {
             username: "TwoCorbies",
-            name: "Shadish, Spawn of Greyta",
-            url: "https://decksofkeyforge.com/decks/be07a1de-5e1e-437e-8c61-032d99aa1372",
+            name: "Navigator Oyama",
+            url: "https://decksofkeyforge.com/decks/5d183b01-41ab-4a2e-825e-4a75c102a695",
         },
-
         {
             username: "a_s_shepelev",
-            name: "“Briscola”, Avversaria di Risobrullo",
-            url: "https://decksofkeyforge.com/decks/1b12a4c4-8ce5-44a5-bd41-8306ba0ec90f",
+            name: "Master “Spud” Maurya",
+            url: "https://decksofkeyforge.com/decks/95b7bb29-c5d4-4504-9c5f-3851f78e63b6",
         },
         {
             username: "a_s_shepelev",
@@ -84,7 +83,6 @@ const main = async () => {
             url: "https://decksofkeyforge.com/decks/ad98be2f-009f-4f54-ac88-aaf4b8065bf2",
             name: "“Rubacuori”, Delegato di Sonnobrullo",
         },
-
         {
             username: "AzamatValeev",
             name: "Normando D. Atphon, the Ninth",
@@ -138,13 +136,13 @@ const main = async () => {
         },
         {
             username: "korzhikspb",
-            name: "Yao the Chiseled",
-            url: "https://decksofkeyforge.com/decks/a95a3be9-3cae-45a5-86c2-a4c114138bcb",
+            name: "Роза, маркиза из ларца",
+            url: "https://decksofkeyforge.com/decks/4faf2b9b-eb64-44c1-af8f-1284ffbafe45",
         },
         {
             username: "korzhikspb",
-            name: "Bhagat Queggerm Pichler",
-            url: "https://decksofkeyforge.com/decks/b85ad555-746d-4d7b-90c3-57cd655cd4c7",
+            name: "Regiwojek, Cathedral Tracker",
+            url: "https://decksofkeyforge.com/decks/b14e9f9b-1c7f-4ad9-bedc-749f15e0e21a",
         }, {
             username: "korzhikspb",
             name: "Drywyrm Rhodes, the Warded and Hungry",
@@ -157,8 +155,8 @@ const main = async () => {
         },
         {
             username: "korzhikspb",
-            name: "Cpt. Mervivene Vinci",
-            url: "https://decksofkeyforge.com/decks/819ba603-4430-48a7-ad98-8cb19b900483",
+            name: "Wealthy Frazier of the Stairwell",
+            url: "https://decksofkeyforge.com/decks/6d576b0e-f162-4f1c-9f85-5f5ae9071da4",
         },
         {
             username: "superalek",
@@ -189,13 +187,13 @@ const main = async () => {
             url: "https://decksofkeyforge.com/decks/7f6f0a5b-c4a2-47ba-a10c-b0a109dc60b4",
         }, {
             username: "Elademri",
-            name: "Директриса Шредер",
-            url: "https://decksofkeyforge.com/decks/7ee801af-1fb4-4cf2-b548-96bb6bb32ccd",
+            name: "Nagwood, the Ranger Acolyte",
+            url: "https://decksofkeyforge.com/decks/39ec1924-596a-4a44-a3c1-81692af52440",
         },
         {
             username: "Elademri",
-            name: "Разбойница Нюкем",
-            url: "https://decksofkeyforge.com/decks/67d3357d-04f9-4611-bd34-4cd65a2cadd8",
+            name: "Нечестивый барон Рой",
+            url: "https://decksofkeyforge.com/decks/ce2794a9-fd7c-40c2-be92-45a3c92aeab5",
         },
         {
             username: "Elademri",
@@ -203,8 +201,8 @@ const main = async () => {
             url: "https://decksofkeyforge.com/decks/dee340cb-0d07-4a2e-973b-b4fdd0fc7aa3",
         }, {
             username: "Elademri",
-            name: "The Baba of Windjungle",
-            url: "https://decksofkeyforge.com/decks/1c183484-0fd8-473c-b481-f8fa5f9e59c3",
+            name: "Alexahurt, the Ratcatcher of Eagles",
+            url: "https://decksofkeyforge.com/decks/c7a06631-cf2e-4c54-b8c2-310065a37ac8",
         },
 
     ])
