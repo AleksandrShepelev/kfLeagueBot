@@ -175,7 +175,7 @@ const main = async () => {
         {
             username: "superalek",
             name: "Everdemon, the Vizier Bookkeeper",
-            url: "https://decksofkeyforge.com/decks/e2ae72df-adb4-409b-931d-a1854f8e03dd",
+            url: "https://decksofkeyforge.com/decks/e1183530-ae84-44ea-ad0d-00547de95b92",
         }, {
             username: "superalek",
             name: "Fraujaz “Freya” Fjalarsson",
